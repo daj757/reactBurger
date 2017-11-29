@@ -13,7 +13,6 @@ Input {
 
 .InputElement {
     outline: none;
-    border: 1px solid #ccc;
     background-color: white;
     font: inherit;
     padding: 6px 10px;
@@ -26,4 +25,8 @@ Input {
     outline: none;
     background-color: #ccc;
 
+}
+
+.Invalid {
+    background-color: rgb(235, 84, 84);
 }
