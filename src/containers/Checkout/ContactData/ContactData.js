@@ -199,7 +199,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     onOrderBurger:(orderData) => {
-        return dispatch(actions.purchaseBurger(orderData))
+        return dispatch(actions.purchaseBurgerStart(orderData))
         
     }
 }
