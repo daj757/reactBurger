@@ -26,8 +26,8 @@ class Checkout extends Component {
     // }
     checkoutContinuedHandler = () => {
         const queryParams = [];
-        for(let i in this.state.ingredients) {
-            queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]))
+        for(let i in this.props.ings) {
+            queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.props.ings[i]))
         }
         let queryString = queryParams.join('&')
         this.props.history.replace({
