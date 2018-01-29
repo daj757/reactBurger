@@ -5,6 +5,7 @@ import NavigationItem from './NavigationItem/NavigationItem'
      <ul className={classes.NavigationItems}>
          <NavigationItem link="/" exact>Burger Builder</NavigationItem>
          <NavigationItem link="/orders">Orders</NavigationItem>
+         <NavigationItem link="/login">Login</NavigationItem>
         </ul>
  )
 
