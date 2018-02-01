@@ -27,7 +27,12 @@ class BurgerBuilder extends Component {
     }
 
     buyHandler = () => {
-        this.setState({buying: true})
+        if(this.props.isAuthenticated){
+            this.setState({buying: true}) 
+        }
+        else {
+            this.props.history.push("/login")
+        }
     }
 
     purchaseContinueHandler = () => {
@@ -37,7 +42,7 @@ class BurgerBuilder extends Component {
         // }
         // queryParams.push('price=' + this.state.totalPrice)
         // const queryString = queryParams.join('&')
-        this.props.onInitPurchased()
+        this.props.onInitPurchased();
         this.props.history.push("/checkout")
     }
 
@@ -102,6 +107,7 @@ class BurgerBuilder extends Component {
                     <Burger ingredients={this.props.ings}/>
 
                     <BuildControls
+                        isAuth={this.props.isAuthenticated }
                         ingredientRemoved={this.props.onIngredientRemoved}
                         ingredientAdded={this.props.onIngredientAdded}
                         disabled={disabledInfo}
@@ -134,7 +140,8 @@ const mapStateToProps = state => {
     return {
         ings: state.burgerBuilder.ingredients,
         price: state.burgerBuilder.totalPrice,
-        error: state.burgerBuilder.error
+        error: state.burgerBuilder.error,
+        isAuthenticated: state.auth.token !== null
     }
 }
 const mapDispatchToProps = dispatch => {
