@@ -7,7 +7,7 @@ import Backdrop from '../Backdrop/Backdrop'
         return nextProps.show !== this.props.show || nextProps.children !== this.props.children;
      }
      componentWillUpdate(){
-         console.log('Will update')
+         
      }
      render(){
          return(
